@@ -38,7 +38,7 @@ async function addNewUser(users){
         age : 31 ,
         city : "alex"
     })
-     console.log(" INserted documents id  :" , result.insertedId)
+ console.log(" INserted documents id  :" , result.insertedId)
 } 
 async function addMany(users){
     const result = await users.insertMany([
@@ -97,6 +97,7 @@ async function addMany(users){
     console.log("INserted documents :" , result.insertedCount)
 }
 
+
 async function findUser(users , id){
     const user = await users.findOne({ _id : new ObjectId(id)})
     if(users){
@@ -106,7 +107,6 @@ async function findUser(users , id){
         console.log("user not found")
     }
 }
-
 async function  countUsers(users){
     const count = await users.countDocuments({ age : 27})
     console.log("Users with same age :" , count)
